@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Imoh Etuk | MSc Computer Science | University of Essex Online</title>
+  <style>
+    :root {
+      --primary: #1a3a5c;
+      --accent:  #2e7de0;
+      --accent2: #e8611a;
+      --bg:      #f5f7fa;
+      --card:    #ffffff;
+      --text:    #1e2a38;
+      --muted:   #64748b;
+      --border:  #dde3ec;
+      --green:   #16a34a;
+      --radius:  12px;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body {
+      font-family: 'Segoe UI', system-ui, -apple-system, sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      line-height: 1.6;
+    }
+
+    /* ── Hero ── */
+    .hero {
+      background: linear-gradient(135deg, var(--primary) 0%, #0f2540 60%, #1c3f6e 100%);
+      color: #fff;
+      padding: 60px 24px 48px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    .hero::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: radial-gradient(ellipse at 70% 40%, rgba(46,125,224,.25) 0%, transparent 60%);
+    }
+    .hero-avatar {
+      width: 96px; height: 96px;
+      border-radius: 50%;
+      border: 3px solid rgba(255,255,255,.4);
+      margin: 0 auto 20px;
+      background: linear-gradient(135deg, var(--accent), var(--accent2));
+      display: flex; align-items: center; justify-content: center;
+      font-size: 2.4rem; font-weight: 700; color: #fff;
+      position: relative;
+    }
+    .hero h1 { font-size: clamp(1.6rem, 4vw, 2.4rem); font-weight: 700; margin-bottom: 8px; }
+    .hero p  { font-size: 1rem; opacity: .85; max-width: 540px; margin: 0 auto 6px; }
+    .hero .badge {
+      display: inline-block;
+      margin-top: 14px;
+      background: rgba(255,255,255,.12);
+      border: 1px solid rgba(255,255,255,.25);
+      border-radius: 100px;
+      padding: 4px 16px;
+      font-size: .82rem;
+      letter-spacing: .5px;
+    }
+
+    /* ── Nav ── */
+    nav {
+      background: var(--card);
+      border-bottom: 1px solid var(--border);
+      padding: 0 24px;
+      display: flex;
+      gap: 0;
+      overflow-x: auto;
+      position: sticky; top: 0; z-index: 10;
+    }
+    nav a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .9rem;
+      font-weight: 500;
+      padding: 14px 18px;
+      border-bottom: 3px solid transparent;
+      white-space: nowrap;
+      transition: color .2s, border-color .2s;
+    }
+    nav a:hover, nav a.active { color: var(--accent); border-bottom-color: var(--accent); }
+
+    /* ── Layout ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 40px 24px 80px; }
+
+    section { margin-bottom: 56px; }
+    .section-title {
+      font-size: 1.25rem; font-weight: 700;
+      color: var(--primary);
+      border-left: 4px solid var(--accent);
+      padding-left: 12px;
+      margin-bottom: 24px;
+    }
+
+    /* ── Stats ── */
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
+      gap: 16px;
+      margin-bottom: 40px;
+    }
+    .stat-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 20px;
+      text-align: center;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .stat-card .num { font-size: 2rem; font-weight: 800; color: var(--accent); }
+    .stat-card .lbl { font-size: .8rem; color: var(--muted); margin-top: 4px; }
+
+    /* ── Repo grid ── */
+    .repo-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 20px;
+    }
+    .repo-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px 22px 18px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+      display: flex; flex-direction: column;
+      transition: transform .18s, box-shadow .18s;
+      text-decoration: none; color: inherit;
+    }
+    .repo-card:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 8px 24px rgba(0,0,0,.10);
+    }
+    .repo-card .repo-icon {
+      font-size: 1.5rem; margin-bottom: 10px;
+    }
+    .repo-card h3 {
+      font-size: .95rem; font-weight: 700;
+      color: var(--accent); margin-bottom: 6px;
+      word-break: break-word;
+    }
+    .repo-card p {
+      font-size: .83rem; color: var(--muted);
+      flex: 1; margin-bottom: 14px;
+    }
+    .repo-meta {
+      display: flex; gap: 8px; flex-wrap: wrap; align-items: center;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 10px;
+      border-radius: 100px;
+      font-size: .72rem; font-weight: 600;
+      background: #e8f0fe; color: var(--accent);
+    }
+    .tag.green  { background: #dcfce7; color: var(--green); }
+    .tag.orange { background: #fff3e0; color: #e65100; }
+    .tag.purple { background: #f3e8ff; color: #7e22ce; }
+
+    /* ── Featured Module ── */
+    .featured {
+      background: linear-gradient(135deg, #0f2540 0%, #1a3a5c 100%);
+      color: #fff;
+      border-radius: var(--radius);
+      padding: 28px 28px 24px;
+      margin-bottom: 24px;
+      position: relative; overflow: hidden;
+    }
+    .featured::after {
+      content: '🤖';
+      position: absolute; right: 24px; top: 50%;
+      transform: translateY(-50%);
+      font-size: 3.5rem; opacity: .15;
+    }
+    .featured .tag-top {
+      display: inline-block;
+      background: rgba(255,255,255,.15);
+      border-radius: 100px;
+      padding: 3px 12px;
+      font-size: .75rem; letter-spacing: .5px;
+      margin-bottom: 10px;
+    }
+    .featured h3 { font-size: 1.2rem; margin-bottom: 8px; }
+    .featured p  { font-size: .88rem; opacity: .85; max-width: 600px; margin-bottom: 16px; }
+    .featured a.btn {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff; text-decoration: none;
+      padding: 8px 20px; border-radius: 8px;
+      font-size: .85rem; font-weight: 600;
+      transition: background .2s;
+    }
+    .featured a.btn:hover { background: #1a5dc9; }
+
+    /* ── About ── */
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    @media (max-width: 640px) { .about-grid { grid-template-columns: 1fr; } }
+    .about-card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      padding: 22px;
+      box-shadow: 0 1px 4px rgba(0,0,0,.06);
+    }
+    .about-card h4 { font-size: .95rem; font-weight: 700; color: var(--primary); margin-bottom: 12px; }
+    .about-card ul { list-style: none; }
+    .about-card ul li {
+      font-size: .85rem; color: var(--muted);
+      padding: 5px 0;
+      border-bottom: 1px solid var(--border);
+      display: flex; gap: 8px; align-items: flex-start;
+    }
+    .about-card ul li:last-child { border-bottom: none; }
+    .about-card ul li::before { content: '▸'; color: var(--accent); flex-shrink: 0; }
+
+    /* ── Footer ── */
+    footer {
+      text-align: center;
+      padding: 28px 24px;
+      font-size: .82rem; color: var(--muted);
+      border-top: 1px solid var(--border);
+      background: var(--card);
+    }
+    footer a { color: var(--accent); text-decoration: none; }
+  </style>
+</head>
+<body>
+
+<!-- Hero -->
+<header class="hero">
+  <div class="hero-avatar">IE</div>
+  <h1>Imoh Etuk</h1>
+  <p>MSc Computer Science · University of Essex Online</p>
+  <p style="opacity:.7;font-size:.85rem;">ie25073@essex.ac.uk</p>
+  <span class="badge">📚 Academic e-Portfolio</span>
+</header>
+
+<!-- Nav -->
+<nav>
+  <a href="#modules" class="active">Modules</a>
+  <a href="#repositories">All Repositories</a>
+  <a href="#about">About</a>
+  <a href="https://github.com/ie25073" target="_blank">GitHub ↗</a>
+</nav>
+
+<main>
+
+  <!-- Stats -->
+  <div class="stats">
+    <div class="stat-card"><div class="num">5</div><div class="lbl">Repositories</div></div>
+    <div class="stat-card"><div class="num">5</div><div class="lbl">Modules</div></div>
+    <div class="stat-card"><div class="num">MSc</div><div class="lbl">Programme</div></div>
+    <div class="stat-card"><div class="num">UoEO</div><div class="lbl">Institution</div></div>
+  </div>
+
+  <!-- Current Module -->
+  <section id="modules">
+    <h2 class="section-title">Current Module</h2>
+    <div class="featured">
+      <span class="tag-top">🟢 IN PROGRESS · July 2026</span>
+      <h3>Module 5 – Intelligent Agents</h3>
+      <p>Explores agent-based computing, multi-agent systems, autonomous behaviour, and intelligent agent architectures. Includes collaborative discussions, practical exercises, and an e-portfolio submission.</p>
+      <a class="btn" href="https://github.com/ie25073/intelligentagent0726" target="_blank">View Repository →</a>
+    </div>
+  </section>
+
+  <!-- All Repositories -->
+  <section id="repositories">
+    <h2 class="section-title">All Repositories</h2>
+    <div class="repo-grid">
+
+      <a class="repo-card" href="https://github.com/ie25073/intelligentagent0726" target="_blank">
+        <div class="repo-icon">🤖</div>
+        <h3>intelligentagent0726</h3>
+        <p>Module 5 – Intelligent Agents (July 2026). Covers agent-based computing, multi-agent systems, autonomy, and intelligent agent architectures. e-Portfolio submission.</p>
+        <div class="repo-meta">
+          <span class="tag green">🟢 Active</span>
+          <span class="tag">Module 5</span>
+          <span class="tag purple">Python</span>
+        </div>
+      </a>
+
+      <a class="repo-card" href="https://github.com/ie25073/implementing-ML-Model-using-Titanic-dataset" target="_blank">
+        <div class="repo-icon">🚢</div>
+        <h3>implementing-ML-Model-using-Titanic-dataset</h3>
+        <p>Introductory machine learning using the Titanic dataset. Demonstrates data preprocessing, supervised learning, and model evaluation with classical ML techniques.</p>
+        <div class="repo-meta">
+          <span class="tag">Machine Learning</span>
+          <span class="tag purple">Python</span>
+        </div>
+      </a>
+
+      <a class="repo-card" href="https://github.com/ie25073/email-spam-classifier-ml" target="_blank">
+        <div class="repo-icon">📧</div>
+        <h3>email-spam-classifier-ml</h3>
+        <p>Email spam classification using machine learning. Applies NLP preprocessing and classification algorithms to distinguish spam from legitimate email messages.</p>
+        <div class="repo-meta">
+          <span class="tag">NLP</span>
+          <span class="tag purple">Python</span>
+        </div>
+      </a>
+
+      <a class="repo-card" href="https://github.com/ie25073/global_temp_trends_analysis_with_python" target="_blank">
+        <div class="repo-icon">🌡️</div>
+        <h3>global_temp_trends_analysis_with_python</h3>
+        <p>Analysis of global temperature trends using Python. Applies data visualisation and statistical analysis to climate datasets to identify long-term patterns.</p>
+        <div class="repo-meta">
+          <span class="tag">Data Analysis</span>
+          <span class="tag purple">Python</span>
+        </div>
+      </a>
+
+      <a class="repo-card" href="https://github.com/ie25073/Module02---LaunchIntoComputingOctober2025B" target="_blank">
+        <div class="repo-icon">🚀</div>
+        <h3>Module02 – Launch Into Computing</h3>
+        <p>Module 2 coursework – Launch Into Computer Science (October 2025). Foundational computing concepts, programming exercises, and module assignments.</p>
+        <div class="repo-meta">
+          <span class="tag orange">Module 2</span>
+          <span class="tag">Computing</span>
+        </div>
+      </a>
+
+    </div>
+  </section>
+
+  <!-- About -->
+  <section id="about">
+    <h2 class="section-title">About This Portfolio</h2>
+    <div class="about-grid">
+      <div class="about-card">
+        <h4>📖 Programme</h4>
+        <ul>
+          <li>MSc Computer Science</li>
+          <li>University of Essex Online</li>
+          <li>Student ID: ie25073</li>
+          <li>Portfolio maintained via GitHub</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h4>🎯 Learning Outcomes</h4>
+        <ul>
+          <li>Machine Learning & AI fundamentals</li>
+          <li>Intelligent Agent architectures</li>
+          <li>Data analysis & visualisation</li>
+          <li>Software engineering practices</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h4>🗂️ Modules Completed / In Progress</h4>
+        <ul>
+          <li>Module 2 – Launch Into Computing</li>
+          <li>Module 3 – Understanding AI</li>
+          <li>Module 5 – Intelligent Agents ✅</li>
+        </ul>
+      </div>
+      <div class="about-card">
+        <h4>🔗 Links</h4>
+        <ul>
+          <li><a href="https://github.com/ie25073" target="_blank">GitHub Profile</a></li>
+          <li><a href="https://github.com/ie25073/intelligentagent0726" target="_blank">Intelligent Agents Repo</a></li>
+          <li><a href="https://www.essex.ac.uk/departments/computer-science-and-electronic-engineering" target="_blank">University of Essex</a></li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <p>Imoh Etuk · MSc Computer Science · University of Essex Online ·
+     <a href="https://github.com/ie25073" target="_blank">github.com/ie25073</a>
+  </p>
+  <p style="margin-top:6px; opacity:.7">Built with GitHub Pages · Updated August 2026</p>
+</footer>
+
+</body>
+</html>
