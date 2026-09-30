@@ -3,7 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Imoh Etuk's MSc Computer Science e-portfolio for Intelligent Agents at the University of Essex Online." />
   <title>Imoh Etuk | MSc Computer Science | University of Essex Online</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Source+Serif+4:opsz,wght@8..60,600;8..60,700&display=swap" rel="stylesheet">
   <style>
     :root {
       --primary: #1a3a5c;
@@ -231,43 +235,89 @@
     }
     footer a { color: var(--accent); text-decoration: none; }
   </style>
+  <link rel="stylesheet" href="styles.css">
+  <script src="https://unpkg.com/lucide@0.468.0/dist/umd/lucide.min.js" defer></script>
 </head>
 <body>
 
 <!-- Hero -->
 <header class="hero">
-  <div class="hero-avatar">IE</div>
-  <h1>Imoh Etuk</h1>
-  <p>MSc Computer Science · University of Essex Online</p>
-  <span class="badge">📚 Academic e-Portfolio</span>
+  <div class="hero-top">
+    <div class="brand">University of Essex <span>Online e-Portfolio</span></div>
+    <span>MSc Computer Science · ie25073</span>
+  </div>
+  <div class="hero-inner">
+    <div class="hero-copy">
+      <span class="badge">Module 5 · Intelligent Agents · July 2026</span>
+      <h1>Imoh Etuk</h1>
+      <p>A learning record of autonomous systems, agent communication, responsible AI and the development of an explainable academic research agent.</p>
+      <div class="hero-actions">
+        <a class="hero-button" href="#evidence"><i data-lucide="book-open" aria-hidden="true"></i>Explore evidence</a>
+        <a class="hero-button secondary" href="https://github.com/ie25073/intelligentagent0726" target="_blank"><i data-lucide="github" aria-hidden="true"></i>Module repository</a>
+      </div>
+    </div>
+    <img class="hero-avatar" src="https://github.com/ie25073.png" width="190" height="190" alt="Imoh Etuk's GitHub profile image">
+  </div>
 </header>
 
 <!-- Nav -->
 <nav>
-  <a href="#modules" class="active">Modules</a>
-  <a href="#repositories">All Repositories</a>
+  <a href="#evidence" class="active">Evidence</a>
+  <a href="#project">Final Project</a>
+  <a href="#repositories">Repositories</a>
   <a href="#about">About</a>
-  <a href="https://github.com/ie25073" target="_blank">GitHub ↗</a>
+  <a href="https://github.com/ie25073" target="_blank">GitHub</a>
 </nav>
 
 <main>
 
   <!-- Stats -->
   <div class="stats">
-    <div class="stat-card"><div class="num">5</div><div class="lbl">Repositories</div></div>
-    <div class="stat-card"><div class="num">5</div><div class="lbl">Modules</div></div>
-    <div class="stat-card"><div class="num">MSc</div><div class="lbl">Programme</div></div>
-    <div class="stat-card"><div class="num">UoEO</div><div class="lbl">Institution</div></div>
+    <div class="stat-card"><div class="num">12</div><div class="lbl">Learning Units</div></div>
+    <div class="stat-card"><div class="num">3</div><div class="lbl">Discussions</div></div>
+    <div class="stat-card"><div class="num">7/7</div><div class="lbl">Project Tests</div></div>
+    <div class="stat-card"><div class="num">4</div><div class="lbl">Learning Outcomes</div></div>
   </div>
 
   <!-- Current Module -->
   <section id="modules">
     <h2 class="section-title">Current Module</h2>
     <div class="featured">
-      <span class="tag-top">🟢 IN PROGRESS · July 2026</span>
+      <span class="tag-top">Completed · July–September 2026</span>
       <h3>Module 5 – Intelligent Agents</h3>
-      <p>Explores agent-based computing, multi-agent systems, autonomous behaviour, and intelligent agent architectures. Includes collaborative discussions, practical exercises, and an e-portfolio submission.</p>
-      <a class="btn" href="https://github.com/ie25073/intelligentagent0726" target="_blank">View Repository →</a>
+      <p>Evidence from agent architecture and communication through responsible deployment, culminating in a tested, bounded academic research agent.</p>
+      <a class="btn" href="https://github.com/ie25073/intelligentagent0726" target="_blank">View complete repository</a>
+    </div>
+  </section>
+
+  <section id="evidence">
+    <h2 class="section-title">Module 5 Evidence Trail</h2>
+    <div class="evidence-list">
+      <article class="evidence-item"><div class="unit">Units 1–3</div><h3>Autonomy and responsibility</h3><p>Discussion and peer synthesis on delegation, coordination, emergent behaviour and proportionate human oversight.</p><a class="evidence-link" aria-label="Read Units 1 to 3 summary" href="https://github.com/ie25073/intelligentagent0726/blob/main/Unit1/Collaborative%20Discussion-1-Agent-Based-Systems/Summary-Post.md" target="_blank"><i data-lucide="arrow-up-right"></i></a></article>
+      <article class="evidence-item"><div class="unit">Units 5–7</div><h3>Agent communication</h3><p>KQML compared with method calls and implemented in a tested Alice-and-Bob KQML/KIF dialogue.</p><a class="evidence-link" aria-label="Open agent dialogue" href="https://github.com/ie25073/intelligentagent0726/tree/main/Unit6/agent-dialogues" target="_blank"><i data-lucide="arrow-up-right"></i></a></article>
+      <article class="evidence-item"><div class="unit">Unit 8</div><h3>Representation and ambiguity</h3><p>Constituency trees show two valid readings of prepositional-phrase attachment and the need for context.</p><a class="evidence-link" aria-label="Read parse trees" href="https://github.com/ie25073/intelligentagent0726/blob/main/Unit8/e-Portfolio-Element/constituency-parse-trees.md" target="_blank"><i data-lucide="arrow-up-right"></i></a></article>
+      <article class="evidence-item"><div class="unit">Units 9–10</div><h3>Deep learning and responsible AI</h3><p>Critical work on confabulation, bias, privacy, lifecycle governance and societal impact.</p><a class="evidence-link" aria-label="Read responsible AI work" href="https://github.com/ie25073/intelligentagent0726/tree/main/Unit9/Collaborative-discussion-3-unit-9-11" target="_blank"><i data-lucide="arrow-up-right"></i></a></article>
+    </div>
+  </section>
+
+  <section id="project">
+    <h2 class="section-title">Final Project</h2>
+    <div class="project-feature">
+      <div>
+        <h3>Academic Research Agent</h3>
+        <p>A Python multi-agent workflow with optional Ollama planning, OpenAlex retrieval, deterministic ranking, transparent fallback and a three-cycle safety bound.</p>
+        <p>Seven tests cover planning contracts, model failure, deduplication, ranking, persistence and bounded execution. The offline demonstration is reproducible without credentials.</p>
+        <div class="hero-actions">
+          <a class="hero-button" href="https://github.com/ie25073/intelligentagent0726/tree/main/Unit11/Development%20Project-Individual%20Project%20Presentation/academic-research-agent" target="_blank"><i data-lucide="code-2"></i>View code</a>
+          <a class="hero-button secondary" href="https://github.com/ie25073/intelligentagent0726/blob/main/Unit11/Development%20Project-Individual%20Project%20Presentation/Academic-Research-Agent-Transcript.md" target="_blank"><i data-lucide="presentation"></i>Presentation</a>
+        </div>
+      </div>
+      <div class="agent-list" aria-label="Four-agent architecture">
+        <div class="agent-step"><span>1</span><div><strong>Planning agent</strong><small>Creates schema-validated search tasks.</small></div></div>
+        <div class="agent-step"><span>2</span><div><strong>Retrieval agent</strong><small>Collects scholarly metadata with provenance.</small></div></div>
+        <div class="agent-step"><span>3</span><div><strong>Processing agent</strong><small>Normalises, deduplicates and ranks.</small></div></div>
+        <div class="agent-step"><span>4</span><div><strong>Storage agent</strong><small>Writes reports, evidence and a trace.</small></div></div>
+      </div>
     </div>
   </section>
 
@@ -378,8 +428,9 @@
      <a href="https://github.com/ie25073" target="_blank">github.com/ie25073</a>
   </p>
 
-  <p style="margin-top:6px; opacity:.7">Built with GitHub Pages · Updated August 2026</p>
+  <p style="margin-top:6px; opacity:.7">Built with GitHub Pages · Updated September 2026</p>
 </footer>
 
+<script>window.addEventListener('DOMContentLoaded', () => lucide.createIcons());</script>
 </body>
 </html>
