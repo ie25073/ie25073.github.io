@@ -116,6 +116,9 @@ section { margin-bottom: 72px; }
 .featured p { color: #272727; opacity: 1; }
 .featured a.btn { color: #fff; background: var(--text); border-radius: 0; text-transform: uppercase; }
 .featured a.btn:hover { background: var(--accent); }
+.submission-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+.featured a.btn.secondary { color: var(--text); background: transparent; border: 2px solid var(--text); }
+.featured a.btn.secondary:hover { color: #fff; background: var(--accent); border-color: var(--accent); }
 
 .evidence-list { border-top: 1px solid var(--border); }
 .evidence-item {
