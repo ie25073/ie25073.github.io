@@ -105,7 +105,7 @@ section { margin-bottom: 72px; }
   font-size: clamp(1.8rem, 4vw, 3rem);
   letter-spacing: 0;
 }
-.stats { gap: 1px; background: var(--text); border: 1px solid var(--text); }
+.stats { gap: 1px; margin-bottom: 72px; background: var(--text); border: 1px solid var(--text); }
 .stat-card { border: 0; border-radius: 0; box-shadow: none; }
 .stat-card .num { color: var(--accent); font-family: "Source Serif 4", serif; }
 .stat-card .lbl { font-weight: 700; text-transform: uppercase; }
@@ -147,8 +147,18 @@ section { margin-bottom: 72px; }
   background: var(--text);
   color: #fff;
 }
+.module-projects { display: grid; gap: 1px; background: var(--text); }
+.project-kicker {
+  display: block;
+  margin-bottom: 10px;
+  color: var(--yellow);
+  font-size: .75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
 .project-feature h3 { margin: 0 0 14px; font: 700 clamp(1.8rem, 4vw, 3rem) "Source Serif 4", serif; }
 .project-feature p { color: #cbc8c0; }
+.submission-feature { margin-bottom: 0; }
 .agent-list { border-left: 6px solid var(--yellow); padding-left: 22px; }
 .agent-step { display: grid; grid-template-columns: 36px 1fr; gap: 12px; padding: 12px 0; }
 .agent-step + .agent-step { border-top: 1px solid #444; }
