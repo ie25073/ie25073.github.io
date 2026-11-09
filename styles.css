@@ -185,6 +185,7 @@ footer { color: var(--text); background: var(--yellow); border: 0; }
 footer a { color: var(--text); font-weight: 700; }
 
 @media (max-width: 760px) {
+  nav { justify-content: flex-start; }
   .hero { min-height: 680px; }
   .hero-top > span:last-child { display: none; }
   .hero-inner { grid-template-columns: 1fr; gap: 24px; padding-top: 40px; }
